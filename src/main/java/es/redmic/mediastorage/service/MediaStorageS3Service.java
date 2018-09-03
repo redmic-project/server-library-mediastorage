@@ -24,7 +24,6 @@ import com.amazonaws.services.s3.transfer.Download;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerBuilder;
 import com.amazonaws.services.s3.transfer.Upload;
-import com.itextpdf.text.pdf.PdfWriter;
 
 import es.redmic.exception.mediastorage.MSFileNotFoundException;
 import es.redmic.exception.mediastorage.MSFileUploadException;
@@ -241,8 +240,8 @@ public class MediaStorageS3Service extends MediaStorageService {
 	 * @param name
 	 *            nombre del fichero
 	 * @param response
-	 *            objeto http donde se guarda el documento para ser devuelta por
-	 *            el controlador
+	 *            objeto http donde se guarda el documento para ser devuelta por el
+	 *            controlador
 	 * @param path
 	 *            ruta donde se va a buscar el fichero
 	 */
@@ -263,8 +262,7 @@ public class MediaStorageS3Service extends MediaStorageService {
 			result.waitForCompletion();
 
 			IOUtils.copy(new FileInputStream(file), response.getOutputStream());
-			com.itextpdf.text.Document document = new com.itextpdf.text.Document();
-			PdfWriter.getInstance(document, response.getOutputStream());
+
 		} catch (Exception e) {
 			throw new MSFileNotFoundException(file.getName(), pathResourse, e);
 		}
