@@ -14,7 +14,7 @@
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>mediastorage</artifactId>
 	<packaging>jar</packaging>
-	<version>0.6.0-feature-updateCI</version>
+	<version>0.7.0</version>
 	<name>Mediastorage</name>
 	<description>MediaStorage utils and management</description>
 
