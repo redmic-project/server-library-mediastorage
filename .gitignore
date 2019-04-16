@@ -2,4 +2,3 @@
 !.gitignore
 !.gitlab-ci.yml
 target
-pom.xml.*
